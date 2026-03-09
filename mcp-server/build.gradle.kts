@@ -1,0 +1,34 @@
+plugins {
+    kotlin("jvm") version "2.3.10"
+    kotlin("plugin.spring") version "2.3.10"
+    kotlin("plugin.power-assert") version "2.3.10"
+    id("org.springframework.boot") version "4.0.2"
+    id("io.spring.dependency-management") version "1.1.7"
+}
+
+kotlin {
+    jvmToolchain(21)
+}
+
+dependencies {
+    implementation(platform("org.springframework.ai:spring-ai-bom:2.0.0-M2"))
+    implementation("org.springframework.ai:spring-ai-starter-mcp-server-webmvc")
+    implementation("org.springframework.boot:spring-boot-starter-security-oauth2-resource-server")
+
+    implementation("org.springaicommunity:mcp-server-security:0.1.2")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+
+    runtimeOnly(kotlin("reflect"))
+
+    testRuntimeOnly("org.springframework.boot:spring-boot-devtools")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootTestRun") {
+    systemProperty("spring.profiles.active", "test")
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
