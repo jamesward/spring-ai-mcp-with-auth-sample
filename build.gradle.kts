@@ -7,28 +7,21 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(25)
 }
 
 dependencies {
+    runtimeOnly(kotlin("reflect"))
+
     implementation(platform("org.springframework.ai:spring-ai-bom:2.0.0-M4"))
     implementation("org.springframework.ai:spring-ai-starter-mcp-server-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-security-oauth2-resource-server")
-
-    implementation("org.springaicommunity:mcp-server-security:0.1.5")
-    implementation("org.springframework.boot:spring-boot-starter-actuator")
-
-    runtimeOnly(kotlin("reflect"))
+    implementation("org.springaicommunity:mcp-server-security-spring-boot:0.1.5")
 
     testRuntimeOnly("org.springframework.boot:spring-boot-devtools")
-
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootTestRun") {
     systemProperty("spring.profiles.active", "test")
-}
-
-tasks.named<Test>("test") {
-    useJUnitPlatform()
 }
