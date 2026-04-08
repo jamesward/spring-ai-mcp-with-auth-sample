@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/auth-server"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "gradle"
+    directory: "/mcp-server"
+    schedule:
+      interval: "weekly"
