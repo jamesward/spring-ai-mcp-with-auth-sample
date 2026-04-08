@@ -15,7 +15,7 @@ dependencies {
     implementation("org.springframework.ai:spring-ai-starter-mcp-server-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-security-oauth2-resource-server")
 
-    implementation("org.springaicommunity:mcp-server-security:0.1.2")
+    implementation("org.springaicommunity:mcp-server-security:0.1.5")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
     runtimeOnly(kotlin("reflect"))
