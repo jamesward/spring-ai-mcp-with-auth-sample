@@ -11,7 +11,7 @@ kotlin {
 }
 
 dependencies {
-    implementation(platform("org.springframework.ai:spring-ai-bom:2.0.0-M2"))
+    implementation(platform("org.springframework.ai:spring-ai-bom:2.0.0-M4"))
     implementation("org.springframework.ai:spring-ai-starter-mcp-server-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-security-oauth2-resource-server")
 
