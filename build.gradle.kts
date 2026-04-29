@@ -13,7 +13,7 @@ kotlin {
 dependencies {
     runtimeOnly(kotlin("reflect"))
 
-    implementation(platform("org.springframework.ai:spring-ai-bom:2.0.0-M4"))
+    implementation(platform("org.springframework.ai:spring-ai-bom:2.0.0-M5"))
     implementation("org.springframework.ai:spring-ai-starter-mcp-server-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-security-oauth2-resource-server")
     implementation("org.springaicommunity:mcp-server-security-spring-boot:0.1.6")
